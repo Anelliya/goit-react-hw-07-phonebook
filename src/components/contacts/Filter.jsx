@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import styles from './styles/PhoneBook.module.css';
-import actions from '../redux/actions/phonebook-actions'
-import selectors from '../redux/contactsSelectors'
+import actions from '../../redux/contacts/actions/phonebook-actions'
+import selectors from '../../redux/contacts/contactsSelectors'
 
 
 const Filter = ({ contacts, filter, handleFilterValue }) => {

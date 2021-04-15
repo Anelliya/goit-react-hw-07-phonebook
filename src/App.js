@@ -1,21 +1,26 @@
-import ContactForm from './components/ContactForm';
-import ContactList from './components/ContactList';
-import Filter from './components/Filter';
-
-import styles from './components/styles/PhoneBook.module.css';
+import Header from './components/header/Header'
+import Routes from './components/Routers'
+import { connect } from 'react-redux'
+import { useEffect } from 'react'
 import './App.css';
 
-function App() {
+import operations from './redux/auth/auth-operations'
+
+function App({ getCurrentUser }) {
+  useEffect( ()=>(getCurrentUser()),
+    []
+  )
   
   return (
-    <div className={styles.container}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts: </h2>
-      <Filter  />
-      <ContactList />
+    < div className="App" >
+      <Header className="App-header"/>
+      <Routes />
     </div>
   )
 }
 
-export default App;
+const mapDispatchToProp = {
+  getCurrentUser: operations.getUser
+}
+
+export default connect(null, mapDispatchToProp)(App);

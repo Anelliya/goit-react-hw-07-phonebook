@@ -1,10 +1,10 @@
 import { connect, useDispatch } from 'react-redux'
 import { useEffect, useState} from 'react';
-import operations from '../redux/contactsOperetions';
+import operations from '../../redux/contacts/contactsOperetions';
 import Loader from 'react-loader-spinner';
 import generateUniqueId from 'generate-unique-id';
 
-import selectors from '../redux/contactsSelectors'
+import selectors from '../../redux/contacts/contactsSelectors'
 
 import styles from './styles/PhoneBook.module.css';
 

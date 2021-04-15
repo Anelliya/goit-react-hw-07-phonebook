@@ -1,5 +1,4 @@
 body {
-    padding                  : 80px 0;
     margin                   : auto;
     box-sizing               : border-box;
     text-align               : center;
@@ -9,14 +8,14 @@ body {
     background-size          : cover;
     /* background-color      : rgb(238, 243, 245); */
     /* background-image      : linear-gradient(to bottom, rgb(33, 6, 75), rgb(74, 5, 95)); */
-    color                    : rgb(49, 23, 90);
+    color                    :lightcoral;
     user-select              : none;
     outline                  : none;
 
 }
 
 p{
-    color: rgb(73, 52, 52);
+    color: black;
 }
 
 ul {
@@ -45,7 +44,7 @@ h2 {
     border-radius                        : 50px;
     padding                              : 20px;
     /* background-image                  : linear-gradient(to top, rgb(95, 58, 231), rgb(10, 25, 160)); */
-    background-color                     : rgb(246, 231, 210);
+    background-color                     : rgb(233, 229, 229);
     box-shadow                           : -10px -10px 5px 0 rgb(187, 181, 173);
 }
 
@@ -71,12 +70,12 @@ h2 {
     border-radius      : 5px;
     /* box-shadow      : 0 0 2px 0 rgb(122, 115, 126); */
     transition         : 1s;
-    box-shadow: 0 0 3px 1px rgb(100, 86, 126);
+    box-shadow: 0 0 3px 1px lightcoral;
 }
 
 .input:focus,
 .input:hover {
-    box-shadow: 0 0 5px 3px rgb(174, 143, 241);
+    box-shadow: 0 0 5px 3px lightcoral;
     transition: 1s;
 }
 
@@ -93,9 +92,9 @@ h2 {
 }
 
 .btn:hover {
-    border-color: rgb(154, 95, 196);
-    color       : rgb(135, 61, 153);
-    box-shadow  : 0 0 10px 0 rgb(133, 111, 161);
+    border-color: lightcoral;
+    color       : lightcoral;
+    box-shadow  : 0 0 10px 0 rgb(80, 23, 23) ;
     transform   : scale(1.1);
     font-weight : bold;
     transition  : 1s;
@@ -110,21 +109,24 @@ h2 {
     flex-direction: column;
     line-height   : 1.5;
 }
+.contactsForm{
+    display: flex;
+}
 
 .contactsItem {
     display           : flex;
     justify-content   : space-between;
     align-items       : center;
     margin-bottom     : 5px;
-    color             : rgb(101, 79, 119);
-    /* color          : rgb(87, 85, 84); */
+    /* color             : rgb(80, 23, 23);  */
+  color          : rgb(87, 85, 84); 
 }
 
 .findField {
     font-size  : 20px;
     font-weight: bold;
-    color      : rgb(85, 73, 95);
-    text-shadow: 1px 1px 2px rgb(187, 164, 223);
+    color      :lightcoral;
+    text-shadow: 1px 1px 3px black ;
 }
 
 .findInput {
@@ -137,7 +139,7 @@ h2 {
 }
 
 .findInput:hover {
-    box-shadow: 0 0 5px 1px rgb(185, 147, 214);
+    box-shadow: 0 0 5px 1px lightcoral;
     transition: 1s;
 }
 
@@ -149,7 +151,7 @@ h2 {
     background-color: transparent;
     cursor          : pointer;
     font-weight     : bold;
-    color           : rgb(101, 79, 119);
+    /* color           : rgb(80, 23, 23); */
     transition      : 1s;
     outline         : none;
 
@@ -158,5 +160,5 @@ h2 {
 .listBtn:hover {
     transition: 1s;
     transform : scale(1.2);
-    color     : rgb(82, 49, 2);
+    color     : lightcoral;
 }

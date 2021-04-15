@@ -2,15 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FormControl, Input, InputLabel, Button, Icon, Tooltip } from "@material-ui/core";
+import { styled } from "@material-ui/styles";
 
-import styles from './styles/PhoneBook.module.css';
-import operations from '../redux/contactsOperetions'
-import selectors from '../redux/contactsSelectors'
+import operations from '../../redux/contacts/contactsOperetions'
+import selectors from '../../redux/contacts/contactsSelectors'
 
 const INITIAL_STATE = {
   name: '',
   number: '',
 };
+
+const MyButton = styled(Button)({
+  color: 'lightcoral',
+  backgroundColor: 'rgb(233, 229, 229)',
+  marginTop: '25px',
+});
+
+const MyInput = styled(Input)({
+  margin: 'auto',
+  fontSize: '26px',
+  textAlign: 'center',
+  // color: 'rgb(80, 23, 23)'
+})
 
 class ContactForm extends Component {
   state = INITIAL_STATE;
@@ -30,6 +44,7 @@ class ContactForm extends Component {
     this.setState(INITIAL_STATE);
   }
 
+
   handleNewValue = ({ target }) => {
     const { value, name } = target;
     this.setState({
@@ -47,42 +62,48 @@ class ContactForm extends Component {
     this.resetState();
   };
 
+
   render() {
 
     return (
-      <form className={styles.form}>
-        <label key="name" className={styles.label}>
-          Name
-          <input
-            type="text"
-            key="name"
+      <form  autoComplete="off">
+       
+        <FormControl>
+          <InputLabel>
+            <Icon>person</Icon> Name</InputLabel>
+          <MyInput
+            label="Error"
+            type="name"
             name="name"
-            placeholder="name"
             value={this.state.name}
             onChange={this.handleNewValue}
-            className={styles.input}
           />
-        </label>
-        <label key="number" className={styles.label}>
-          Phone
-          <input
+        </FormControl>
+
+        <FormControl >
+          <InputLabel> <Icon>phone</Icon>
+            Phone</InputLabel>
+          <MyInput
             type="text"
             key="number"
             name="number"
-            placeholder="phone"
             value={this.state.number}
-            onChange={this.handleNewValue}
-            className={styles.input}
+             onChange={this.handleNewValue}
           />
-        </label>
-        <button
-          onClick={this.handleAddNewContact}
-          disabled={!this.state.name || !this.state.number}
-          className={styles.btn}
-        >
-          Add contact
-        </button>
-            <ToastContainer /> 
+        </FormControl>
+
+        <ToastContainer />
+        <Tooltip title="Please, enter name and phone to adding!">
+          <span>
+            <MyButton
+              disabled={!this.state.name || !this.state.number}
+              variant="contained"
+              endIcon={<Icon>person</Icon>}
+              onClick={this.handleAddNewContact}
+              >Add contact
+            </MyButton>
+          </span>
+        </Tooltip>
       </form>
     );
   }
